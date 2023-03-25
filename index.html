@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>EthiopianEkub</title>
+</head> 
+<body >
+
+
+    <div class="form">
+        
+        <p id="main-header">Fill The Form For EthioEkub</p>
+        
+    <form action="results.html" method="GET" class="formr">
+        <div class="name">
+            <label for="name">Name</label>
+            <input name="Name" id="name" placeholder="username">
+        </div>
+        <div class="lname">
+            <label for="lname">last Name</label>
+            <input name="LName" id="Lname" placeholder="lastname">
+        </div>
+        <div class="phonenu">
+            <label for="phonenu">Phoneo number</label>
+            <input name="phonenu" id="phonenu" placeholder="+251948142939">
+        </div>
+        <div class="ekubtype">
+            <label for="ekub">Ekub type</label>
+            <select name="ekubtype" id="ekubtype">
+                <option value="fullEkub">Full Ekub</option>
+                <option value="HalfEkub">Half Ekub</option>
+            </select>
+        </div>
+        <div class="birth">
+            <label for="date">Date</label>
+            <input name="date" type="date"  id="date">
+        </div>
+        
+        
+        <button type="reset" class="btn">Reset</button>
+        <button type="button" id="btn" value="Add" onclick="AddRow()" class="chart">Add To Chart</button>
+    </form>
+    </div>
+    <div class="auto" >
+        <h5 class="list">List of Members of EthioEkub</h5>
+      <table class="table table-striped shadow " id="parkingTable">
+                <thead class="text-black" id="tableHead">
+                  <tr class="boo">
+                    <th class="col">frist Name</th>
+                    <th scope="col">last Name</th>
+                    <th scope="col">phone number</th>
+                    <th scope="col">Ekub Type</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Action</th>
+                 
+                  </tr>
+                </thead>
+                <tbody id="tableBody">
+                 
+                </tbody>
+              </table>
+</div>
+<script>
+   
+
+var list1 = [];
+var list2 = [];
+var list3 = [];
+var list4 = [];
+var list5 = [];
+var list5 = [];
+
+
+var n = 1;
+var x = 0;
+
+function AddRow(){
+
+    var AddRown = document.getElementById('tableHead');
+    var NewRow = AddRown.insertRow(n);
+
+    list1[x] = document.getElementById("name").value;
+    list2[x] = document.getElementById("Lname").value;
+    list3[x] = document.getElementById("phonenu").value;
+    list4[x] = document.getElementById("ekubtype").value;
+    list5[x] = document.getElementById("date").value;
+
+
+    var cel1 = NewRow.insertCell(0);
+    var cel2 = NewRow.insertCell(1);
+    var cel3 = NewRow.insertCell(2);
+    var cel4 = NewRow.insertCell(3);
+    var cel5 = NewRow.insertCell(4);
+    var cel6 = NewRow.insertCell(5);
+
+    cel1.innerHTML = list1[x];
+    cel2.innerHTML = list2[x];
+    cel3.innerHTML = list3[x];
+    cel4.innerHTML = list4[x];
+    cel5.innerHTML = list5[x];
+    cel6.innerHTML = list6[x];
+
+
+    n++;
+    x++;
+}
+
+
+</script>
+</body>
+</html>
